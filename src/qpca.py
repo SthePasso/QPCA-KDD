@@ -240,7 +240,7 @@ class Metrics():
 
         return usage_seconds, estimated_running_time_seconds,mean_readout_error, mean_t1, mean_t2
 
-    def should_skip_execution(results_file, samples, start_at):
+    def should_skip_execution(self, results_file, samples, start_at):
         if os.path.exists(results_file):
             df_existing = pd.read_csv(results_file)
             # If there are existing records with the same sample count and dimensions greater than or equal to start_at, return True
