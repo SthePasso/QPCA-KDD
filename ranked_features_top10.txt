@@ -1,0 +1,16 @@
+Top 10 Features Ranked by Pearson Correlation (Most to Least Relevant)
+================================================================================
+
+1. count: r = 0.9146, |r| = 0.9146
+2. srv_count: r = 0.7831, |r| = 0.7831
+3. dst_host_srv_serror_rate: r = 0.4452, |r| = 0.4452
+4. dst_host_serror_rate: r = 0.4307, |r| = 0.4307
+5. serror_rate: r = 0.4031, |r| = 0.4031
+6. srv_serror_rate: r = 0.3989, |r| = 0.3989
+7. protocol_type: r = -0.3580, |r| = 0.3580
+8. same_srv_rate: r = -0.3530, |r| = 0.3530
+9. dst_host_same_src_port_rate: r = 0.3448, |r| = 0.3448
+10. logged_in: r = -0.2784, |r| = 0.2784
+
+================================================================================
+rank_features = ['count', 'srv_count', 'dst_host_srv_serror_rate', 'dst_host_serror_rate', 'serror_rate', 'srv_serror_rate', 'protocol_type', 'same_srv_rate', 'dst_host_same_src_port_rate', 'logged_in']
