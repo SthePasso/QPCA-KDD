@@ -249,6 +249,26 @@ class Metrics():
         
         return False
 
+    def metrics_of_evaluation_classicaly(self, svc, dimension, end, start, test_features, test_labels):
+        predictions = svc.predict(test_features)
+        TP, TN, FP, FN, accuracy, precision, sensitivity, specificity, f1_score = self.calculate_metrics(test_labels, predictions)
+        usage_time = end - start
+        df_results = pd.DataFrame({
+            'Dimension': dimension,
+            'TP': [TP],
+            'TN': [TN],
+            'FP': [FP],
+            'FN': [FN],
+            'Accuracy': [accuracy],
+            'Precision': [precision],
+            'Sensitivity': [sensitivity],
+            'Specificity': [specificity],
+            'F1 Score': [f1_score],
+            'Elapsed Time (s)': [usage_time],
+            'Usage (s)': [usage_time],
+        })
+        return df_results
+
 #######################################
 class QPCA():
     def __init__(self):
