@@ -285,6 +285,7 @@ class QPCA():
         return LR, train_features_rbf, test_features_rbf
         
     def main_cpca_correlation(self,samples=500, start_at=2, end_at=10, results_file = "results/cpca.csv"):
+        os.makedirs(os.path.dirname(results_file), exist_ok=True)
         kdd_data = KDD()
         file_exists = os.path.exists(results_file)
         for dimension in range(start_at, end_at):
@@ -337,7 +338,8 @@ class QPCA():
         return LR, train_features_q, test_features_q
 
     def main_qpca_q_correlation(self,samples=500, start_at=0, end_at=20, results_file="results/qpca_qkernel.csv"):
-        
+        os.makedirs(os.path.dirname(results_file), exist_ok=True)
+
         # **Check if the CSV already exists**
         file_exists = os.path.exists(results_file)
 
@@ -379,7 +381,9 @@ class QPCA():
         LR.fit(train_features_q, y_train)
         return LR, train_features_q, test_features_q
 
-    def main_qpca_rbf_correlation(self, samples=500, start_at=0, end_at=20, results_file="results/qpca_qData.csv"):    
+    def main_qpca_rbf_correlation(self, samples=500, start_at=0, end_at=20, results_file="results/qpca_qData.csv"):
+        os.makedirs(os.path.dirname(results_file), exist_ok=True)
+
         # **Check if the CSV already exists**
         file_exists = os.path.exists(results_file)
 
